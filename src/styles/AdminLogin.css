@@ -1,0 +1,225 @@
+/* Sacred Color Palette */
+:root {
+    --saffron: #FF9933;
+    --temple-gold: #D4AF37;
+    --divine-white: #F8F1E5;
+    --holy-black: #1E1E1E;
+    --priest-maroon: #82204A;
+  }
+  
+  /* Base Styles */
+  .admin-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(30, 30, 30, 0.9), rgba(30, 30, 30, 0.9)),
+                url('https://i.imgur.com/JtQJbZQ.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .temple-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  .diya-light {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, var(--temple-gold) 0%, rgba(212, 175, 55, 0) 70%);
+    opacity: 0.3;
+    animation: flicker 4s infinite alternate;
+  }
+  
+  .om-symbol {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    font-size: 3rem;
+    color: rgba(212, 175, 55, 0.2);
+  }
+  
+  @keyframes flicker {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.05); }
+  }
+  
+  .login-card {
+    background: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid var(--temple-gold);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+    position: relative;
+    z-index: 1;
+    color: var(--divine-white);
+  }
+  
+  .login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .login-header h2 {
+    font-size: 1.8rem;
+    color: var(--temple-gold);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .login-header p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    font-size: 0.95rem;
+    color: var(--temple-gold);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .email-icon {
+    background-image: url('https://i.imgur.com/YbJ4Z7P.png');
+  }
+  
+  .key-icon {
+    background-image: url('https://i.imgur.com/KlLkQ9W.png');
+  }
+  
+  .login-form input {
+    padding: 0.9rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    color: var(--divine-white);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .login-form input:focus {
+    outline: none;
+    border-color: var(--temple-gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .login-form input::placeholder {
+    color: rgba(248, 241, 229, 0.5);
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to right, var(--priest-maroon), #6a1b3d);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .login-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  .spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .login-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    padding-top: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .login-card {
+      padding: 1.5rem;
+      margin: 1rem;
+    }
+    
+    .login-header h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Auth Check Loading Styles */
+.auth-check-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgba(30, 30, 30, 0.9);
+    color: #D4AF37;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .auth-check-loading p {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .auth-check-loading .spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(212, 175, 55, 0.3);
+    border-top: 5px solid #D4AF37;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }

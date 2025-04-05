@@ -1,0 +1,180 @@
+/* HomePage.css */
+:root {
+    --saffron: #FF9933;
+    --temple-gold: #D4AF37;
+    --divine-white: #F8F1E5;
+    --sacred-red: #E43F5A;
+    --holy-black: #1E1E1E;
+  }
+  
+  .home-container {
+    min-height: 100vh;
+    background: var(--holy-black);
+    color: var(--divine-white);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .divine-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  .floating-diya {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, var(--temple-gold) 0%, transparent 70%);
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .hero-section {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .main-heading {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .main-heading span {
+    color: var(--temple-gold);
+    display: block;
+  }
+  
+  .subheading {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .cta-primary, .cta-secondary {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-primary {
+    background: var(--temple-gold);
+    color: var(--holy-black);
+  }
+  
+  .cta-secondary {
+    border: 2px solid var(--temple-gold);
+    color: var(--temple-gold);
+  }
+  
+  .services-section {
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--temple-gold);
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .service-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+  }
+  
+  .om-icon {
+    font-size: 2.5rem;
+    color: var(--temple-gold);
+  }
+  
+  .service-time {
+    color: var(--temple-gold);
+    font-weight: 500;
+  }
+  
+  .temple-info {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .temple-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+  }
+  
+  .stat-item span {
+    font-size: 2rem;
+    color: var(--temple-gold);
+    display: block;
+  }
+  
+  .sacred-footer {
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 2rem;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .main-heading {
+      font-size: 2.5rem;
+    }
+    
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .temple-stats {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }

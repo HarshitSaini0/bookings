@@ -1,0 +1,288 @@
+/* Sacred Color Palette */
+:root {
+  --saffron: #FF9933;
+  --sacred-red: #E43F5A;
+  --temple-gold: #D4AF37;
+  --divine-white: #F8F1E5;
+  --holy-black: #1E1E1E;
+  --priest-maroon: #82204A;
+  --incense-purple: #5D4177;
+}
+
+/* Base Styles */
+.temple-booking-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background: url('bg-form.png') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.divine-light {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, rgba(0,0,0,0) 70%);
+  animation: rotateLight 30s linear infinite;
+}
+
+@keyframes rotateLight {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.temple-booking-form {
+  background: rgba(30, 30, 30, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid var(--temple-gold);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+  position: relative;
+  z-index: 1;
+  color: var(--divine-white);
+}
+
+.temple-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.om-symbol {
+  font-size: 3rem;
+  color: var(--temple-gold);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+}
+
+.temple-header h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--temple-gold);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.temple-header p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--temple-gold);
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.diya-icon { background-image: url('https://i.imgur.com/YbJ4Z7P.png'); }
+.bell-icon { background-image: url('https://i.imgur.com/KlLkQ9W.png'); }
+.lotus-icon { background-image: url('https://i.imgur.com/mQ4XWqk.png'); }
+.kalash-icon { background-image: url('https://i.imgur.com/9JQZf7j.png'); }
+.hands-icon { background-image: url('https://i.imgur.com/3vJtQ9W.png'); }
+
+.temple-booking-form input,
+.temple-booking-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--divine-white);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.temple-booking-form input:focus,
+.temple-booking-form textarea:focus {
+  outline: none;
+  border-color: var(--temple-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.temple-booking-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to right, var(--priest-maroon), var(--incense-purple));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #6a1b3d, #4a3368));
+  transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Blessing Message */
+.blessing-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+.blessing-content {
+  background: rgba(30, 30, 30, 0.95);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 400px;
+  border: 1px solid var(--temple-gold);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.blessing-content h3 {
+  color: var(--temple-gold);
+  margin-bottom: 0.5rem;
+}
+
+.blessing-content p {
+  color: var(--divine-white);
+  opacity: 0.9;
+}
+
+.flower-petal {
+  position: absolute;
+  background: url('https://i.imgur.com/mQ4XWqk.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.3;
+  width: 40px;
+  height: 40px;
+}
+
+.flower-petal:nth-child(1) {
+  top: 10px;
+  left: 10px;
+  transform: rotate(20deg);
+}
+
+.flower-petal:nth-child(2) {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(200deg);
+}
+
+.flower-petal:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(120deg);
+  width: 60px;
+  height: 60px;
+}
+
+.aarti-light {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,153,51,0.8) 0%, rgba(255,153,51,0) 70%);
+  animation: flicker 3s infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .temple-booking-form {
+    padding: 1.5rem;
+  }
+  
+  .temple-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .om-symbol {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .temple-booking-form {
+    padding: 1.2rem;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+  }
+  
+  .temple-booking-form input,
+  .temple-booking-form textarea {
+    padding: 0.7rem;
+  }
+}
