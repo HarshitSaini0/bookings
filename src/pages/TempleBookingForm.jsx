@@ -25,6 +25,24 @@ const TempleBookingForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Mobile number validation regex (assuming 10 digits)
+    const mobileRegex = /^\d{10}$/;
+    
+    // Validate email
+    if (!formData.userEmail || !emailRegex.test(formData.userEmail)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+    
+    // Validate mobile number
+    if (!formData.phoneNumber || !mobileRegex.test(formData.phoneNumber)) {
+      alert('Please enter a valid 10-digit mobile number');
+      return;
+    }
+    
     setIsSubmitting(true);
     
     try {
@@ -41,6 +59,8 @@ const TempleBookingForm = () => {
       });
     } catch (error) {
       console.error("Booking error:", error);
+      // You might want to show the error to the user as well
+      alert('Booking failed. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
